@@ -83,6 +83,16 @@ class WorldBankAPI:
         life_expectancy_df.to_csv(file_path, index=False) 
         return life_expectancy_df 
     
+    def get_unemployment_rate(self, file_path):
+        unemployment_rate_url = config.get('unemployment_rate', 'url') 
+        response = requests.get(unemployment_rate_url) 
+        response.raise_for_status() 
+        data = response.json() 
+        unemployment_rate_data = [] 
+        for item in data[1]:
+            country_data = {
+                "country": item["country"]["value"], 
+            }
     
 # create an instance of the WorldBankAPI class
 api = WorldBankAPI(url="https://api.worldbank.org/v2/")
