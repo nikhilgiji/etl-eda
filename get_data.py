@@ -94,7 +94,7 @@ class WorldBankAPI:
                 "country": item["country"]["value"], 
             }
     
-# create an instance of the WorldBankAPI class
+# create an instance of the WorldBankAPI classi
 api = WorldBankAPI(url="https://api.worldbank.org/v2/")
 
 # get the list of countries and save it to a CSV file
