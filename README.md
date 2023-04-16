@@ -44,3 +44,9 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+lastname 1, firstname1, matno1  
+lastname 2, firstname2, matno2  
+
+1) Write down the value of your seed:  
+(your value here)
