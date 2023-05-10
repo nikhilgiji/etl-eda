@@ -92,9 +92,14 @@ class WorldBankAPI:
         for item in data[1]:
             country_data = {
                 "country": item["country"]["value"], 
+                "country_code": item["countryiso3code"],
+                "year":item["date"],
+                "unemployment_rate": item["value"]
             }
-    
-# create an instance of the WorldBankAPI classi
+            unemployment_rate_data.append(country_data)
+        unemployment_rate_df = pd.DataFrame(unemployment_rate_data, columns=['country', 'country_code',
+                                                                              'year', 'unemployment_rate'])
+# create an instance of the WorldBankAPI class
 api = WorldBankAPI(url="https://api.worldbank.org/v2/")
 
 # get the list of countries and save it to a CSV file
